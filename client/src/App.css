@@ -1,0 +1,28 @@
+.marker.yellow > svg {
+  fill: rgb(243, 207, 0);
+}
+
+.marker.red > svg {
+  fill: rgb(177, 39, 39);
+}
+
+.mapboxgl-marker {
+  z-index: 1;
+}
+
+.popup {
+  width: 25vw;
+  min-width: 200px;
+}
+
+.popup > img {
+  height: 100px;
+  object-fit: contain;
+  display: block;
+}
+
+.mapboxgl-popup,
+.mapboxgl-popup-anchor-top {
+  z-index: 2;
+  margin: 20px;
+}
