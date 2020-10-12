@@ -24,5 +24,6 @@
 .mapboxgl-popup,
 .mapboxgl-popup-anchor-top {
   z-index: 2;
-  margin: 20px;
+  margin-top: 25px;
+  margin-left: 6px;
 }
