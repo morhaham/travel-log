@@ -23,6 +23,8 @@ function LogEntryForm({ location, onClose }) {
   return (
     <form className="logEntryForm" onSubmit={handleSubmit(onSubmit)}>
       {error ? <h3 className="error">{error}</h3> : null}
+      <label htmlFor="apiKey">API KEY</label>
+      <input type="password" name="apiKey" ref={register} required />
       <label htmlFor="title">כותרת</label>
       <input type="text" name="title" ref={register} required />
       <label htmlFor="description">תיאור</label>
