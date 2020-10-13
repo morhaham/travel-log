@@ -2,6 +2,7 @@ const { Router } = require("express");
 const LogEntry = require("../models/LogEntry");
 
 const router = Router();
+const { API_KEY } = process.env;
 
 router.get("/", async (req, res, next) => {
   try {
@@ -14,6 +15,9 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
+    if (req.get("X-API-KEY") !== API_KEY) {
+      throw Error("UnAuthorized");
+    }
     const logEntry = new LogEntry(req.body);
     const createdEntry = await logEntry.save();
     res.json(createdEntry);
